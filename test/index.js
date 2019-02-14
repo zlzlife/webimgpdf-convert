@@ -31,7 +31,7 @@ const o = require('../index');
 const web = path.join(__dirname, 'html', 'index.html');
 const file = path.join(__dirname, '..', 'files', 'b.jpg');
 try {
-    o.htmlToImg(web, file);
+    o.htmlToPdf(web, file);
     console.log('done');
     console.log(fs.existsSync(file));
 } catch (err) {
