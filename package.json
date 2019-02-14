@@ -1,0 +1,28 @@
+{
+  "name": "webimgpdf-convert",
+  "version": "1.0.0",
+  "description": "web html pdf img convert",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/774320433/webimgpdf-convert.git"
+  },
+  "keywords": [
+    "pdftoimg",
+    "htmltoimg",
+    "htmltopdf"
+  ],
+  "author": "zlz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/774320433/webimgpdf-convert/issues"
+  },
+  "engines": {
+    "node": ">= 10.9.0",
+    "npm": ">= 6.2.0"
+  },
+  "homepage": "https://github.com/774320433/webimgpdf-convert#readme"
+}
