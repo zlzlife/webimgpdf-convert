@@ -5,7 +5,7 @@ const phantomjsPath = path.join(__dirname, 'src', 'phantomjs', 'webconvert.js');
 /**
  * 将网页转成pdf
  * @param {string} web 网页地址 https://www.baidu.com
- * @param {string} pdf 文件输出路劲 ~/files/a.pdf
+ * @param {string} pdf 文件输出路劲 /xxx/xxx/xxx/a.pdf
  */
 function webToPdf(web, pdf) {
     const phantomjs = 'phantomjs';
@@ -21,14 +21,14 @@ function webToPdf(web, pdf) {
         quality,
         timeout
     ];
-    // console.log(cmd.join(' '));
+    console.log(cmd.join(' '));
     cp.execSync(cmd.join(' '));
 }
 
 /**
  * 将指定网页转成图片
  * @param {string} web 网页地址 https://www.baidu.com
- * @param {string} img 文件输出路劲 ~/files/a.jpg
+ * @param {string} img 文件输出路劲 /xxx/xxx/xxx/a.jpg
  */
 function webToImg(web, img) {
     const phantomjs = 'phantomjs';
@@ -48,17 +48,25 @@ function webToImg(web, img) {
     cp.execSync(cmd.join(' '));
 }
 
-// todo
-async function htmlToPdf(html, root, pdf) {
-
+/**
+ * 将html转成pdf文件
+ * @param {string} html HTML文件路劲 /xxx/xxx/xxx/a.html
+ * @param {string} pdf 文件输出路劲 /xxx/xxx/xxx/a.pdf
+ */
+function htmlToPdf(html, pdf) {
+    webToPdf(path.join('file:///', html), pdf);
 }
 
-// todo
-async function pdfToImg(pdf, img) {
-
+/**
+ * 将html转成img文件
+ * @param {string} html HTML文件路劲 /xxx/xxx/xxx/a.html
+ * @param {string} img 文件输出路劲 /xxx/xxx/xxx/a.jpg
+ */
+function htmlToImg(html, img) {
+    webToImg(path.join('file:///', html), img);
 }
 
 module.exports.webToPdf = webToPdf;
 module.exports.webToImg = webToImg;
 module.exports.htmlToPdf = htmlToPdf;
-module.exports.pdfToImg = pdfToImg;
+module.exports.htmlToImg = htmlToImg;
